@@ -1,0 +1,21 @@
+# 빌드 결과물
+build/
+Debug/
+Release/
+*.o
+*.d
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+
+# STM32CubeIDE / Eclipse
+.metadata/
+.settings/
+*.launch
+
+# 에디터
+.vscode/
+*.swp
+.DS_Store
