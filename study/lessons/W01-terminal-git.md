@@ -106,11 +106,68 @@ W01 과제: 터미널 명령어 실습 결과 추가
 
 ## 4. 따라 하기 실습 (직접 타이핑하세요)
 
+### 4-0. 어디서 하나요? (처음 한 번만 준비)
+
+실습은 **내 컴퓨터의 터미널**에서 합니다. GitHub 웹사이트가 아닙니다.
+게임으로 치면 "세이브 파일을 내 PC 로 내려받아서, 내 PC 에서 게임하는" 단계입니다.
+
+**① 어떤 컴퓨터에서?**
+
+| 선택지 | 추천 | 설명 |
+|---|---|---|
+| 개인 PC (Windows) | ⭐ 추천 | Git 설치 한 번이면 끝 |
+| 회사 PC | ✕ | 보안 정책상 설치나 GitHub 접속이 막혀 있을 수 있음 |
+| 설치가 안 될 때 | 대안 | GitHub Codespaces (브라우저 안의 터미널, 설치 불필요) |
+
+**② Git 설치 (Windows)**
+
+1. https://git-scm.com 에서 **Download for Windows** 를 받아 설치합니다. 옵션은 전부 기본값으로 "Next" 만 누르면 됩니다.
+2. 설치가 끝나면 시작 메뉴에서 **Git Bash** 를 엽니다. 검은 창이 뜨면 그게 터미널입니다.
+3. 설치 확인:
+
+```bash
+git --version
+```
+
+`git version 2.xx.x` 처럼 나오면 성공입니다.
+
+**③ 내 이름표 붙이기 (처음 한 번만)**
+
+세이브할 때마다 "누가 저장했는지" 가 같이 기록됩니다. 그 이름과 이메일을 등록합니다.
+이메일은 GitHub 가입할 때 쓴 것을 적습니다.
+
+```bash
+git config --global user.name "내이름"
+git config --global user.email "GitHub가입이메일@example.com"
+```
+
+**④ 저장소를 내 PC 로 내려받기 (clone)**
+
+공부 자료는 `claude/epic-noether-qwtzyk` 브랜치에 있습니다.
+그냥 내려받으면 다른 브랜치가 열려서 `study` 폴더가 안 보이므로, `-b` 로 브랜치를 꼭 지정합니다.
+(브랜치는 W02 에서 자세히 배웁니다. 지금은 "다른 세이브 슬롯" 정도로 생각하세요.)
+
+```bash
+cd ~
+git clone -b claude/epic-noether-qwtzyk https://github.com/kangoo1541/Dennis_folder.git
+cd Dennis_folder
+ls study
+```
+
+`README.md  PROGRESS.md  homework  lessons  progress.sh` 가 보이면 준비 완료입니다.
+
+> 💡 처음 `git push` 할 때 GitHub 로그인 창이 뜹니다. 브라우저에서 로그인하면 다음부터는 자동입니다.
+
+### 4-1. 실습 시작
+
+준비가 끝났으면 아래를 **한 줄씩** 직접 타이핑합니다.
+
 ```bash
 # 1) 저장소 폴더로 이동
-cd Dennis_folder
+cd ~/Dennis_folder
 
-# 2) 지금 상태 확인
+# 2) 클라우드의 최신 세이브 받기 + 지금 상태 확인
+git pull
 git status
 git log --oneline
 
